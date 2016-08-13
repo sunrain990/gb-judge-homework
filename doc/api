@@ -1,0 +1,59 @@
+用户注册功能
+
+提交
+PUT http://121.41.4.51/api/admin/user/
+
+uid: 用户id
+student_id:学生证号
+school_id: 学校
+username:sunrain992
+password:password
+real_name:sunrain992
+email:sunrain992@qq.com
+admin_type:0
+openapi:true
+
+
+返回
+{
+    "code":0,
+    "data":{
+        "id":3,
+        "username":"sunrain992",
+        "real_name":"sunrain992",
+        "email":"sunrain992@qq.com",
+        "admin_type":0,
+        "create_time":"2016-08-10T09:00:55.156960Z",
+        "last_login":null,
+        "two_factor_auth:false,
+        "openapi_appkey":"5da852503894f864cbeccd361bf2279e",
+        "is_forbidden":false
+    }
+}
+
+
+
+
+
+
+
+http://121.41.4.51/api/admin/test_case_upload/
+{"code":0,"data":{"file_list":{"1":{"striped_output_md5":"1679091c5a880faf6fb5e6087eb1b2dc","output_size":2,"output_md5":"9ae0ea9e3c9c6e1b9b6252c8395efdc1","input_name":"1.in","input_size":6,"output_name":"1.out"}},"spj":false,"test_case_id":"7ad455d38a5d53856f38b3e3ca87332d"}}
+
+
+http://121.41.4.51/api/admin/problem/
+description
+difficulty
+hint
+id
+input_description
+memory_limit
+output_description
+samples  : [{input: "",output: ""}]
+source "testtt"
+spj false
+tags ["testtt"]
+test_case_id ""
+time_limit "1000"
+title "testtt"
+visible true
