@@ -1,30 +1,27 @@
 <template>
-    sadf
-    asf
-    as
-    fdas
-    f
-    as
-    f
-    as
-    <div>1111111</div>
-    <Footerbar></Footerbar>
+    <Sidebar :index-img="indexImg"></Sidebar>
+    data : {{ data | json }}
 </template>
 
 <script>
-    import Footerbar from './footer.vue'
+    import Sidebar from './sidebar.vue'
+    import { getDemosData } from '../../vuex/getters'
+    import { getDemo } from '../../vuex/actions'
+
     export default {
-        components: { Footerbar },
+        components: {
+            Sidebar
+        },
         vuex: {
             getters: {
-
+                data: getDemosData
             },
             actions: {
-
+                getDemo
             }
         },
         created() {
-
+            this.getDemo()
         },
         methods: {
 

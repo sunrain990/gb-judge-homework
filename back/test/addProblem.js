@@ -10,7 +10,7 @@ var data = {
     difficulty: "1",
     hint: "<p>this is hint<br></p>",
     id: -1,
-    // uid: 1,
+    uid: 1,
     input_description: "testtt",
     memory_limit: "128",
     output_description: "lovexc",
@@ -25,7 +25,7 @@ var data = {
     tags: ["lovexc","from xc"],
     test_case_id: "058811aa9505763ae5c84163f0fe29ce",
     time_limit: "1000",
-    title: "reallylovexc",
+    title: "reallylovexc1",
     visible: true
 };//这是需要提交的数据
 
@@ -35,7 +35,7 @@ var content = qs.stringify(data);
 var options = {
     hostname: '121.41.4.51',
     port: 80,
-    path: '/api/admin/problem/',
+    path: '/api/admin/problem1/',
     method: 'POST',
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'

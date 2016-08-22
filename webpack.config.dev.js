@@ -27,15 +27,27 @@ module.exports = {
             template: path.join(__dirname,'src/index.html'),
             inject: true
         }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        }),
         new ExtractTextPlugin('[hash:8].style.css', { allChunks: true })
     ],
+    // modulesDirectories: [
+    //     'src/lib'
+    // ],
     module: {
         preLoaders: [
             { test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/ }
         ],
         loaders: [
-            { test: /\.vue$/,loader: 'vue', include: path.join(__dirname,'src')},
-            { test: /\.js$/, loader: 'babel', exclude: /node_modules|vue\/dist|vue-hot-reload-api|vue-router\/|vue-loader/},
+            {
+                test: /\.vue$/,loader: 'vue',
+            },
+            {
+                test: /\.js$/, loader: 'babel',
+                exclude: /node_modules|vue\/dist|vue-hot-reload-api|vue-router\/|vue-loader/
+            },
             { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap' ) },
             { test: /\.(jpe?g|png|gif)$/i, loaders: [
                 'url?limit=10000&name=images/[hash:8].[name].[ext]',

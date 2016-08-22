@@ -4,7 +4,9 @@
 //静态页面
 let serve = require('koa-static');
 //路由
-let router = require('koa-router');
+// let router = require('koa-router');
+//cors
+let cors = require('koa-cors');
 // //视图模版
 // let views = require('co-views');
 // //session
@@ -29,6 +31,7 @@ module.exports = function(app) {
     // });
 
     // responseTime
+    app.use(cors());
     app.use(responseTime());
     // app.use(compress());
     // app.keys = ['session'];

@@ -1,13 +1,17 @@
 /**
  * Created by kevin on 16/7/22.
  */
-export const getIndexImage = ({dispatch}) => {
-    api.getIndexImage().then(response => {
-        if(!response.ok){
-            return dispatch(types.GET_INDEX_IMG, {indexImg: img})
+import api from '../api'
+import * as types from './mutation-types'
+
+export const getDemo = ({dispatch}) => {
+    api.getDemos().then(response => {
+        if(!response.ok) {
+            return dispatch(types.DEMO_STATE_FALIURE)
         }
-        dispatch(types.GET_INDEX_IMG, {indexImg: response.data.img})
+        console.log(response, ' this is response!')
+        dispatch(types.DEMO_STATE_SUCCESS, response.data)
     }, response => {
-        dispatch(types.GET_INDEX_IMG, {indexImg: img})
+        dispatch(types.DEMO_STATE_FALIURE)
     })
 }
