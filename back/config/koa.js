@@ -7,6 +7,7 @@ let serve = require('koa-static');
 // let router = require('koa-router');
 //cors
 let cors = require('koa-cors');
+let bodyParser = require('koa-bodyparser');
 // //视图模版
 // let views = require('co-views');
 // //session
@@ -32,6 +33,8 @@ module.exports = function(app) {
 
     // responseTime
     app.use(cors());
+    app.use(bodyParser());
+    
     app.use(responseTime());
     // app.use(compress());
     // app.keys = ['session'];

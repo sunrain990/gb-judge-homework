@@ -1,9 +1,10 @@
 /**
- * Created by kevin on 16/8/11.
+ * Created by kevin on 16/8/31.
  */
 var http = require('http')
 
-var url = 'http://121.41.4.51/api/open/submission1/' +'?submission_id=b3bd431978184f80403dd040f70e1cd8'
+var url = 'http://121.40.51.192/api/admin/problem1/' +'?chapterid=0'
+    +'&paging=true&page=1&page_size=4'
 
 http.get(url, function(res) {
     var html = '';
@@ -13,7 +14,7 @@ http.get(url, function(res) {
     })
 
     res.on('end', function() {
-        console.log(html)
+        // console.log(html)
         var htmlJSON = JSON.parse(html)
         console.log(htmlJSON)
     })

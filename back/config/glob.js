@@ -7,6 +7,7 @@ let path = require('path');
 const logger = require('mini-logger');
 //moment时间
 const moment = require('moment');
+let _ = require('lodash');
 
 let log = logger(conf.log);
 global.log = log;
@@ -14,10 +15,11 @@ global.log = log;
 global.path = path;
 // console.log('global-path');
 global.moment = moment;
-
+global._ = _;
 
 module.exports = {
     log: log,
     path: path,
-    moment: moment
+    moment: moment,
+    _: _
 }
