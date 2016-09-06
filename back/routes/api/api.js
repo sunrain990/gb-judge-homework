@@ -84,7 +84,8 @@ function register (app) {
             test_case_id: req.test_case_id,
             time_limit: req.time_limit,
             title: req.title,
-            visible: true
+            chapterid: parseInt(req.chapterid),
+            visible: false
         };//这是需要提交的数据
 
         var msg = _.merge(userData, data)
