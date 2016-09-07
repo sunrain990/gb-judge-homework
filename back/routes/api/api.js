@@ -235,29 +235,60 @@ function register (app) {
 
     router.post('/admin/problem_edit', function *(){
         let req = this.request.body;
-        console.log(req.samples[0], ' this is req samples!!!!')
+        // console.log(req.samples[0], ' this is req samples!!!!')
+
 
         var msg = {
-            description: req.description,
-            difficulty: req.difficulty,
+            // description: req.description,
+            // difficulty: req.difficulty,
             hint: "<p>this is hint<br></p>",
-            id: req.id,
-            uid: req.uid,
-            input_description: req.input_description,
-            memory_limit: req.memory_limit,
-            output_description: req.output_description,
-            samples: req.samples,
+            // id: req.id,
+            // uid: req.uid,
+            // input_description: req.input_description,
+            // memory_limit: req.memory_limit,
+            // output_description: req.output_description,
+            // samples: req.samples,
             // samples: JSON.stringify(req.samples),
             source: 'from xmgc',
             spj: false,
             tags: ["notag",'notag2'],
             // test_case_id: "058811aa9505763ae5c84163f0fe29ce",
-            test_case_id: req.test_case_id,
-            time_limit: req.time_limit,
-            title: req.title,
-            chapterid: parseInt(req.chapterid),
-            visible: true
+            // test_case_id: req.test_case_id,
+            // time_limit: req.time_limit,
+            // title: req.title,
+            // chapterid: req.chapterid,
+            // visible: req.visible
         };//这是需要提交的数据
+
+
+
+        if(req.description) {
+            msg.description = req.description;
+        }else if(req.difficulty) {
+            msg.difficulty = req.difficulty;
+        }else if(req.id) {
+            msg.id = req.id;
+        }else if(req.uid) {
+            msg.uid = req.uid;
+        }else if(req.input_description) {
+            msg.input_description = req.input_description;
+        }else if(req.memory_limit) {
+            msg.memory_limit = req.memory_limit;
+        }else if(req.output_description) {
+            msg.output_description = req.output_description;
+        }else if(req.samples) {
+            msg.samples = req.samples;
+        }else if(req.test_case_id) {
+            msg.test_case_id = req.test_case_id;
+        }else if(req.time_limit) {
+            msg.time_limit = req.time_limit;
+        }else if(req.title) {
+            msg.title = req.title;
+        }else if(req.chapterid) {
+            msg.chapterid = req.chapterid;
+        }else if(req.visible) {
+            msg.visible = req.visible;
+        }
 
         console.log(msg, ' this is the msg!')
 
