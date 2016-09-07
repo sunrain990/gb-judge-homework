@@ -255,6 +255,7 @@ function register (app) {
             test_case_id: req.test_case_id,
             time_limit: req.time_limit,
             title: req.title,
+            chapterid: parseInt(req.chapterid),
             visible: true
         };//这是需要提交的数据
 
@@ -266,12 +267,12 @@ function register (app) {
 
         var options = {
             url: ojurl + '/api/admin/problem1/',
-            method: 'POST',
+            method: 'PUT',
             headers: headers,
             json: msg
         }
 
-        let result = yield request.put(options);
+        let result = yield request(options);
         let body = result.body;
         console.log('Body: ', body);
         this.body = result.body;
