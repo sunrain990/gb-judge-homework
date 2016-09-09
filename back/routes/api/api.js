@@ -264,29 +264,41 @@ function register (app) {
 
         if(req.description) {
             msg.description = req.description;
-        }else if(req.difficulty) {
+        }
+        if(req.difficulty) {
             msg.difficulty = req.difficulty;
-        }else if(req.id) {
+        }
+        if(req.id) {
             msg.id = req.id;
-        }else if(req.uid) {
+        }
+        if(req.uid) {
             msg.uid = req.uid;
-        }else if(req.input_description) {
+        }
+        if(req.input_description) {
             msg.input_description = req.input_description;
-        }else if(req.memory_limit) {
+        }
+        if(req.memory_limit) {
             msg.memory_limit = req.memory_limit;
-        }else if(req.output_description) {
+        }
+        if(req.output_description) {
             msg.output_description = req.output_description;
-        }else if(req.samples) {
+        }
+        if(req.samples) {
             msg.samples = req.samples;
-        }else if(req.test_case_id) {
+        }
+        if(req.test_case_id) {
             msg.test_case_id = req.test_case_id;
-        }else if(req.time_limit) {
+        }
+        if(req.time_limit) {
             msg.time_limit = req.time_limit;
-        }else if(req.title) {
+        }
+        if(req.title) {
             msg.title = req.title;
-        }else if(req.chapterid) {
+        }
+        if(req.chapterid) {
             msg.chapterid = req.chapterid;
-        }else if(req.visible) {
+        }
+        if(req.visible) {
             msg.visible = req.visible;
         }
 
