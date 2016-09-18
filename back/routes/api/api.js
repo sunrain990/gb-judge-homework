@@ -323,6 +323,35 @@ function register (app) {
 
 
 
+    router.post('/admin/problem_delete', function *(){
+        let req = this.request.body;
+        // console.log(req.samples[0], ' this is req samples!!!!')
+
+
+        var msg = {
+            id: req.id,
+        };//这是需要提交的数据
+
+        var headers = {
+            'Content-Type': 'application/json'
+        };
+
+        var options = {
+            url: ojurl + '/api/admin/problem1/',
+            method: 'DELETE',
+            headers: headers,
+            json: msg
+        }
+
+        let result = yield request(options);
+        let body = result.body;
+        console.log('Body: ', body);
+        this.body = result.body;
+    });
+
+
+
+
     app.use(router.routes());
     app.use(router.allowedMethods());
 }
