@@ -257,10 +257,10 @@ function register (app) {
             // time_limit: req.time_limit,
             // title: req.title,
             // chapterid: req.chapterid,
-            // visible: req.visible
+            // visible: false
         };//这是需要提交的数据
 
-
+        console.log(req,' this is visible');
 
         if(req.description) {
             msg.description = req.description;
@@ -299,7 +299,7 @@ function register (app) {
             msg.chapterid = req.chapterid;
         }
         // if(req.visible) {
-            msg.visible = req.visible?req.visible:false;
+            msg.visible = (!req.visible||req.visible == 'false')?0:1;
         // }
 
         console.log(msg, ' this is the msg!')
