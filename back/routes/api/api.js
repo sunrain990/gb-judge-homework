@@ -298,9 +298,9 @@ function register (app) {
         if(req.chapterid) {
             msg.chapterid = req.chapterid;
         }
-        if(req.visible) {
-            msg.visible = req.visible;
-        }
+        // if(req.visible) {
+            msg.visible = req.visible?req.visible:false;
+        // }
 
         console.log(msg, ' this is the msg!')
 
